@@ -1,0 +1,29 @@
+<%= form_for(@solr_mapping) do |f| %>
+  <% if @solr_mapping.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@solr_mapping.errors.count, "error") %> prohibited this solr_mapping from being saved:</h2>
+
+      <ul>
+      <% @solr_mapping.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :solrfield %><br>
+    <%= f.text_field :solrfield %>
+  </div>
+  <div class="field">
+    <%= f.label :solrvalue %><br>
+    <%= f.text_field :solrvalue %>
+  </div>
+  <div class="field">
+    <%= f.label :tag_id %><br>
+    <%= f.number_field :tag_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
